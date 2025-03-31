@@ -1,4 +1,4 @@
-![Pokedex for Real Life](preview.jpg)
+![preview](preview.jpg)
 # Search_Launcher
 This is a  tool I created in Python and use every day.
 It is my quick search box I use to quickly get search results from the sites I often use.  
