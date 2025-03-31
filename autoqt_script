@@ -1,0 +1,17 @@
+import subprocess
+
+# get active window title
+active_window = subprocess.check_output(["xdotool", "getactivewindow", "getwindowname"], text=True)
+# get launcher window id
+launcher_window_1 = subprocess.run("wmctrl -lp | grep Launchitz", shell=True, check=True, stdout=subprocess.PIPE)
+launcher_window_2 = launcher_window_1.stdout			# get standard out from command
+launcher_window_3 = launcher_window_2.decode('utf-8')	# convert byte object to string
+launcher_window_4 = launcher_window_3.split()[0]		# split variable up & only use first pt as that is window id
+
+# Check if Launchitz is in the active window title
+if "Launchitz" in active_window:
+    # Minimize the window if it's already the active window
+    subprocess.run("xdotool windowminimize "+launcher_window_4, shell=True, check=True)
+else:
+    # Make launchitz the active window if its not
+    subprocess.run("xdotool windowactivate "+launcher_window_4, shell=True, check=True)
