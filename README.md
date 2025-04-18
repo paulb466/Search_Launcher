@@ -1,7 +1,7 @@
 [![Demonstration](Video_Demo.jpg)](https://www.youtube.com/watch?v=WzH3QNOlijc "Video Demonstration")
 [![Preview](preview.jpg)]
 
-<img src="preview.jpg" width="248">
+<img src="preview.jpg" width="348">
 
 # Search_Launcher
 This is a  tool I created in Python and use every day.
