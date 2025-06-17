@@ -9,8 +9,8 @@ import os
 
 
 global input_list	# for recalling past searches
-input_list = [""]		# for recalling past searches
-index = -1			# for recalling past searches
+input_list = []		# for recalling past searches
+index = 0			# for recalling past searches
 index_from_start = "yes"
 
 def get_new_filename():
@@ -32,6 +32,9 @@ def save_note(event):
 	closeprocedure()
 
 def closeprocedure():
+	global index #reset index
+	index = 0
+
 	store_search()
 	clear_radio_buttons()
 	t.delete("1.0", END)	# deletes contents in text box
@@ -61,7 +64,7 @@ def recall_past_down(event):
 	global index
 	global index_from_start
 	if index_from_start == "yes":	# checks if this is the first time pressing ctrl-down
-		index = 1					# sets index to first item entered in list
+		index = 0					# sets index to first item entered in list
 		index_from_start = "no"		# sets the variable to now be 'no'
 	else:
 		if index == (len(input_list)-1):	# if the index hits last item in the list reset it
