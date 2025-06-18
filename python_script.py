@@ -74,6 +74,8 @@ def recall_past_down(event):
 	t.delete("1.0", END)
 	t.insert("1.0", input_list[index])
 
+def select_all(event):
+	t.tag_add('sel', '1.0', 'end')
 
 def open_link(link):
 	link = link.replace("#", "%23")	# this symbol cannot be put in a url, %23 is its representation
@@ -199,6 +201,7 @@ root.bind('<Return>', func)		#normal enter button
 root.bind('<KP_Enter>', func)	#numberic keypad enter
 root.bind('<Control-Up>', recall_past_up)
 root.bind('<Control-Down>', recall_past_down)
+root.bind('<Control-a>', select_all)
 
 
 # Main GUI configuring
